@@ -14,6 +14,10 @@
 		922B92C62960D946008CA266 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 922B92C32960D946008CA266 /* LICENSE */; };
 		922B92C72960D946008CA266 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 922B92C42960D946008CA266 /* .gitignore */; };
 		922B92C82960D946008CA266 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 922B92C52960D946008CA266 /* README.md */; };
+		922B92CC2960EAD0008CA266 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B92CB2960EAD0008CA266 /* GameView.swift */; };
+		922B92CE2960F62C008CA266 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B92CD2960F62C008CA266 /* Buttons.swift */; };
+		922B92D02961024E008CA266 /* ModifierTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B92CF2961024E008CA266 /* ModifierTemplates.swift */; };
+		922B92D2296105DB008CA266 /* RPS_Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B92D1296105DB008CA266 /* RPS_Options.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,10 @@
 		922B92C32960D946008CA266 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		922B92C42960D946008CA266 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		922B92C52960D946008CA266 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		922B92CB2960EAD0008CA266 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		922B92CD2960F62C008CA266 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		922B92CF2961024E008CA266 /* ModifierTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifierTemplates.swift; sourceTree = "<group>"; };
+		922B92D1296105DB008CA266 /* RPS_Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPS_Options.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,10 @@
 				922B92B72960D77E008CA266 /* MainView.swift */,
 				922B92B92960D781008CA266 /* Assets.xcassets */,
 				922B92BB2960D781008CA266 /* Preview Content */,
+				922B92CB2960EAD0008CA266 /* GameView.swift */,
+				922B92CD2960F62C008CA266 /* Buttons.swift */,
+				922B92CF2961024E008CA266 /* ModifierTemplates.swift */,
+				922B92D1296105DB008CA266 /* RPS_Options.swift */,
 			);
 			path = RPS;
 			sourceTree = "<group>";
@@ -150,6 +162,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				922B92B82960D77E008CA266 /* MainView.swift in Sources */,
+				922B92CC2960EAD0008CA266 /* GameView.swift in Sources */,
+				922B92D2296105DB008CA266 /* RPS_Options.swift in Sources */,
+				922B92CE2960F62C008CA266 /* Buttons.swift in Sources */,
+				922B92D02961024E008CA266 /* ModifierTemplates.swift in Sources */,
 				922B92B62960D77E008CA266 /* RPS_App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

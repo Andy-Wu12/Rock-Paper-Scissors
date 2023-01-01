@@ -8,33 +8,36 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var started = false
+    
     var body: some View {
 //        🪨📄✂️
         VStack {
-            HStack {
-                Text("🪨")
-                Text("📄")
-                Text("✂️")
+            if !started {
+                TitleView()
+                TitleButton(text: "START", action: { started.toggle() })
+            } else {
+                GameView()
+                TitleButton(text: "QUIT", action: { started.toggle() })
             }
-            .font(.system(size: 100))
-            .shadow(color: Color("UniversalPurple"), radius: 10)
-            
-            Text("Rock Paper Scissors")
-                .font(.title)
-                .fontWeight(.heavy)
-                .foregroundColor(Color("UniversalPurple"))
-            
-            Button("START") {
-                
-            }
-            .frame(width: 100, height: 100)
-            .foregroundColor(.white)
-            .font(.system(size: 25))
-            .background(.green)
-            .cornerRadius(10)
         }
         .padding()
         
+    }
+}
+
+struct TitleView: View {
+    var body: some View {
+        HStack {
+            ForEach(Array(options.keys), id: \.self) { optionKey in
+                VStack {
+                    Text(options[optionKey]!)
+                    Text(optionKey)
+                        .font(.title)
+                }
+            }
+        }
+        .iconStyle()
     }
 }
 
@@ -43,3 +46,4 @@ struct ContentView_Previews: PreviewProvider {
         MainView()
     }
 }
+
