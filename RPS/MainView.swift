@@ -17,8 +17,7 @@ struct MainView: View {
                 TitleView()
                 TitleButton(text: "START", action: { started.toggle() })
             } else {
-                GameView()
-                TitleButton(text: "QUIT", action: { started.toggle() })
+                GameView(gameStarted: $started)
             }
         }
         .padding()

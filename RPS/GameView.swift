@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct GameView: View {
+    @Binding var gameStarted: Bool
+    
     @State private var cpuChoice = ""
     @State private var userChoice = ""
     @State private var userMadeChoice: Bool = false
@@ -57,6 +59,7 @@ struct GameView: View {
             }
             .iconStyle()
             Spacer()
+            TitleButton(text: "QUIT", action: { quitGame() })
         }
     }
 
@@ -124,6 +127,13 @@ struct GameView: View {
         userMadeChoice = false
         resultText = ""
     }
+    
+    func quitGame() {
+        reset()
+        cpuScore = 0
+        playerScore = 0
+        gameStarted = false
+    }
 }
 
 struct OpponentView: View {
@@ -172,7 +182,8 @@ struct Scoreboard: View {
 }
 
 struct GameView_Previews: PreviewProvider {
+    @State static var started: Bool = false
     static var previews: some View {
-        GameView()
+        GameView(gameStarted: $started)
     }
 }
