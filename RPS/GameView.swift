@@ -166,7 +166,7 @@ struct Scoreboard: View {
                     .foregroundColor(.green)
             }
         }
-        .font(.system(size: 40))
+        .font(.system(size: 30))
         .fontWeight(.heavy)
     }
 }
