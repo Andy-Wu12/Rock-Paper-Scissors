@@ -22,26 +22,30 @@ struct GameView: View {
                 .padding(.top)
             // CPU
             Spacer()
-            OpponentView(revealed: $userMadeChoice)
+            OpponentView(choice: $cpuChoice, revealed: $userMadeChoice)
             Spacer()
-            Text(resultText)
-                .font(.largeTitle)
-                .fontWeight(.heavy)
+            // Post-guess information
+            VStack {
+                if resultText != "" {
+                    Text(resultText)
+                        .font(.largeTitle)
+                        .fontWeight(.heavy)
+                    Button("Play again") {
+                        reset()
+                    }
+                    .font(.largeTitle)
+                    .padding(.horizontal)
+                    .iconStyle()
+                }
+            }
             Spacer()
             // Player
             HStack {
                 ForEach(Array(options.keys), id: \.self) { optionKey in
                     Button(action: {
-                        userChoice = optionKey
-                        userMadeChoice = true
-                        
-                        // Generate random choice for cpu
-                        generateCPUChoice()
-                        
-                        // Check result
-                        let result = checkWin(playerChoice: userChoice, cpuChoice: cpuChoice)
-                        updateResult(result: result)
-                        
+                        if !userMadeChoice {
+                            onChoiceClick(optionKey)
+                        }
                     }) {
                         VStack {
                             Text(options[optionKey]!)
@@ -56,6 +60,18 @@ struct GameView: View {
         }
     }
 
+    func onChoiceClick(_ choiceKey: String) {
+        userChoice = choiceKey
+        userMadeChoice = true
+        
+        // Generate random choice for cpu
+        generateCPUChoice()
+        
+        // Check result
+        let result = checkWin(playerChoice: userChoice, cpuChoice: cpuChoice)
+        updateResult(result: result)
+    }
+    
     func getResultText(result: Int) -> String {
         switch result {
         case -1:
@@ -101,10 +117,17 @@ struct GameView: View {
             cpuScore += 1
         }
     }
+    
+    func reset() {
+        cpuChoice = ""
+        userChoice = ""
+        userMadeChoice = false
+        resultText = ""
+    }
 }
 
 struct OpponentView: View {
-    @State private var choice: String = options.randomElement()!.key
+    @Binding var choice: String
     @Binding var revealed: Bool
     
     var body: some View {
