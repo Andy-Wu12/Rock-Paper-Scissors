@@ -21,6 +21,22 @@ class StatTracker: Codable {
     var numPaper: Int = 0
     var numScissors: Int = 0
     
+    var namesAndValues: [String: Int] {
+        [
+            "Wins": self.wins,
+            "Losses": self.losses,
+            "Ties": self.ties,
+            "Rounds Played": self.roundsPlayed,
+            "Games Started": self.timesStarted,
+            "# of times quit while losing": self.timesQuitWhileLosing,
+            "# of times quit while tied or winning": self.timesQuitWhileNotLosing,
+            "# times game opened": self.timesOpened,
+            "# rocks picked": self.numRocks,
+            "# papers picked": self.numPaper,
+            "# scissors picked": self.numScissors,
+        ]
+    }
+    
     // TODO: Add persistence to stats (save / load)
     func save() -> Void {
         

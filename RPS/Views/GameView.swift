@@ -67,7 +67,7 @@ struct GameView: View {
                 }
                 Spacer()
             }
-            TitleButton(text: "QUIT", action: {
+            CustomNavButton(text: "QUIT", action: {
                 if cpuScore > playerScore { tracker.timesQuitWhileLosing += 1 }
                 else { tracker.timesQuitWhileNotLosing += 1 }
                 quitGame()

@@ -8,19 +8,26 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var showingStats = false
     @State private var started = false
     @State private var statTracker = StatTracker()
     
     var body: some View {
+        // Would be cleaner to add navigation view, but less "game feel"
         VStack {
-            if !started {
+            if started {
+                GameView(gameStarted: $started, tracker: $statTracker)
+            } else if showingStats {
+                StatView(tracker: $statTracker, showingStats: $showingStats)
+            } else {
                 TitleView()
-                TitleButton(text: "START", action: {
+                CustomNavButton(text: "START", action: {
                     statTracker.timesStarted += 1
                     started.toggle()
                 })
-            } else {
-                GameView(gameStarted: $started, tracker: $statTracker)
+                CustomNavButton(text: "STATS", action: {
+                    showingStats.toggle()
+                })
             }
         }
         .padding()
