@@ -1,14 +1,14 @@
 //
-//  RPS_Options.swift
+//  config.swift
 //  RPS
 //
 //  Created by Andy Wu on 12/31/22.
 //
 
-import Foundation
+import OrderedCollections
 
 //    🪨📄✂️
-let options = [
+let options: OrderedDictionary<String, String> = [
     "rock": "🪨",
     "paper": "📄",
     "scissors": "✂️"
