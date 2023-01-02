@@ -17,7 +17,7 @@
 		922B92CC2960EAD0008CA266 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B92CB2960EAD0008CA266 /* GameView.swift */; };
 		922B92CE2960F62C008CA266 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B92CD2960F62C008CA266 /* Buttons.swift */; };
 		922B92D02961024E008CA266 /* ModifierTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B92CF2961024E008CA266 /* ModifierTemplates.swift */; };
-		922B92D2296105DB008CA266 /* RPS_Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B92D1296105DB008CA266 /* RPS_Options.swift */; };
+		922B92D2296105DB008CA266 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B92D1296105DB008CA266 /* config.swift */; };
 		922B92D429626AFF008CA266 /* AdaptiveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B92D329626AFF008CA266 /* AdaptiveStack.swift */; };
 		922B92D7296296B6008CA266 /* StatTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B92D6296296B6008CA266 /* StatTracker.swift */; };
 /* End PBXBuildFile section */
@@ -34,7 +34,7 @@
 		922B92CB2960EAD0008CA266 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		922B92CD2960F62C008CA266 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		922B92CF2961024E008CA266 /* ModifierTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifierTemplates.swift; sourceTree = "<group>"; };
-		922B92D1296105DB008CA266 /* RPS_Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPS_Options.swift; sourceTree = "<group>"; };
+		922B92D1296105DB008CA266 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		922B92D329626AFF008CA266 /* AdaptiveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveStack.swift; sourceTree = "<group>"; };
 		922B92D6296296B6008CA266 /* StatTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatTracker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,7 +79,7 @@
 				922B92CB2960EAD0008CA266 /* GameView.swift */,
 				922B92CD2960F62C008CA266 /* Buttons.swift */,
 				922B92CF2961024E008CA266 /* ModifierTemplates.swift */,
-				922B92D1296105DB008CA266 /* RPS_Options.swift */,
+				922B92D1296105DB008CA266 /* config.swift */,
 				922B92D329626AFF008CA266 /* AdaptiveStack.swift */,
 				922B92D6296296B6008CA266 /* StatTracker.swift */,
 			);
@@ -170,7 +170,7 @@
 				922B92B82960D77E008CA266 /* MainView.swift in Sources */,
 				922B92D429626AFF008CA266 /* AdaptiveStack.swift in Sources */,
 				922B92CC2960EAD0008CA266 /* GameView.swift in Sources */,
-				922B92D2296105DB008CA266 /* RPS_Options.swift in Sources */,
+				922B92D2296105DB008CA266 /* config.swift in Sources */,
 				922B92D7296296B6008CA266 /* StatTracker.swift in Sources */,
 				922B92CE2960F62C008CA266 /* Buttons.swift in Sources */,
 				922B92D02961024E008CA266 /* ModifierTemplates.swift in Sources */,
