@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OrderedCollections
 
 class StatTracker: Codable {
     var wins: Int = 0
@@ -21,7 +22,7 @@ class StatTracker: Codable {
     var numPaper: Int = 0
     var numScissors: Int = 0
     
-    var namesAndValues: [String: Int] {
+    var namesAndValues: OrderedDictionary<String, Int> {
         [
             "Wins": self.wins,
             "Losses": self.losses,

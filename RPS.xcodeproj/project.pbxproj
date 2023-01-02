@@ -21,6 +21,7 @@
 		922B92D429626AFF008CA266 /* AdaptiveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B92D329626AFF008CA266 /* AdaptiveStack.swift */; };
 		922B92D7296296B6008CA266 /* StatTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B92D6296296B6008CA266 /* StatTracker.swift */; };
 		922B92DA2962A4D6008CA266 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B92D92962A4D6008CA266 /* StatView.swift */; };
+		922B92DD29635E5A008CA266 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 922B92DC29635E5A008CA266 /* OrderedCollections */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				922B92DD29635E5A008CA266 /* OrderedCollections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +123,9 @@
 			dependencies = (
 			);
 			name = RPS;
+			packageProductDependencies = (
+				922B92DC29635E5A008CA266 /* OrderedCollections */,
+			);
 			productName = "RPS-iOS";
 			productReference = 922B92B22960D77E008CA266 /* RPS.app */;
 			productType = "com.apple.product-type.application";
@@ -149,6 +154,9 @@
 				Base,
 			);
 			mainGroup = 922B92A92960D77E008CA266;
+			packageReferences = (
+				922B92DB29635E5A008CA266 /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			productRefGroup = 922B92B32960D77E008CA266 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -391,6 +399,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		922B92DB29635E5A008CA266 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		922B92DC29635E5A008CA266 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 922B92DB29635E5A008CA266 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 922B92AA2960D77E008CA266 /* Project object */;
 }
