@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GameView: View {
     @Binding var gameStarted: Bool
+    @Binding var tracker: StatTracker
     
     @State private var cpuChoice = ""
     @State private var userChoice = ""
@@ -66,11 +67,16 @@ struct GameView: View {
                 }
                 Spacer()
             }
-            TitleButton(text: "QUIT", action: { quitGame() })
+            CustomNavButton(text: "QUIT", action: {
+                if cpuScore > playerScore { tracker.timesQuitWhileLosing += 1 }
+                else { tracker.timesQuitWhileNotLosing += 1 }
+                quitGame()
+            })
         }
     }
 
     func onChoiceClick(_ choiceKey: String) {
+        tracker.roundsPlayed += 1
         userChoice = choiceKey
         userMadeChoice = true
         
@@ -85,10 +91,13 @@ struct GameView: View {
     func getResultText(result: Int) -> String {
         switch result {
         case -1:
+            tracker.losses += 1
             return "Lose"
         case 0:
+            tracker.ties += 1
             return "Tie"
         case 1:
+            tracker.wins += 1
             return "Win"
         default:
             return "Error"
@@ -102,12 +111,17 @@ struct GameView: View {
         if playerChoice == cpuChoice {
             result = 0
         } else if playerChoice == "rock" {
+            tracker.numRocks += 1
             if cpuChoice == "scissors" { result = 1 }
             else { result = -1 }
+            
         } else if playerChoice == "paper" {
+            tracker.numPaper += 1
             if cpuChoice == "rock" { result = 1 }
             else { result = -1 }
+            
         } else if playerChoice == "scissors" {
+            tracker.numScissors += 1
             if cpuChoice == "paper" { result = 1 }
             else { result = -1 }
         }
@@ -187,7 +201,8 @@ struct Scoreboard: View {
 
 struct GameView_Previews: PreviewProvider {
     @State static var started: Bool = false
+    @State static var tracker = StatTracker()
     static var previews: some View {
-        GameView(gameStarted: $started)
+        GameView(gameStarted: $started, tracker: $tracker)
     }
 }

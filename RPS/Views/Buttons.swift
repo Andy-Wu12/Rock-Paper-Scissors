@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TitleButton: View {
+struct CustomNavButton: View {
     var text: String
     var action: () -> Void
     
@@ -23,7 +23,7 @@ struct TitleButton: View {
 
 struct Buttons_Previews: PreviewProvider {
     static var previews: some View {
-        TitleButton(text: "Hello") {
+        CustomNavButton(text: "Hello") {
             print("Clicked!")
         }
     }
