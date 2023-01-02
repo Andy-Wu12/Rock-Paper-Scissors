@@ -31,7 +31,7 @@ class StatTracker: Codable {
             "Games Started": self.timesStarted,
             "Quits while losing": self.timesQuitWhileLosing,
             "Quits while tied or winning": self.timesQuitWhileNotLosing,
-            "# Times Game opened": self.timesOpened,
+//            "# Times Game opened": self.timesOpened,
             "Rocks picked": self.numRocks,
             "Papers picked": self.numPaper,
             "Scissors picked": self.numScissors,
