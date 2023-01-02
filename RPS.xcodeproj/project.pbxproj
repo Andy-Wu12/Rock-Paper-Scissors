@@ -18,6 +18,7 @@
 		922B92CE2960F62C008CA266 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B92CD2960F62C008CA266 /* Buttons.swift */; };
 		922B92D02961024E008CA266 /* ModifierTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B92CF2961024E008CA266 /* ModifierTemplates.swift */; };
 		922B92D2296105DB008CA266 /* RPS_Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B92D1296105DB008CA266 /* RPS_Options.swift */; };
+		922B92D429626AFF008CA266 /* AdaptiveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B92D329626AFF008CA266 /* AdaptiveStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		922B92CD2960F62C008CA266 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		922B92CF2961024E008CA266 /* ModifierTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifierTemplates.swift; sourceTree = "<group>"; };
 		922B92D1296105DB008CA266 /* RPS_Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPS_Options.swift; sourceTree = "<group>"; };
+		922B92D329626AFF008CA266 /* AdaptiveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				922B92CD2960F62C008CA266 /* Buttons.swift */,
 				922B92CF2961024E008CA266 /* ModifierTemplates.swift */,
 				922B92D1296105DB008CA266 /* RPS_Options.swift */,
+				922B92D329626AFF008CA266 /* AdaptiveStack.swift */,
 			);
 			path = RPS;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				922B92B82960D77E008CA266 /* MainView.swift in Sources */,
+				922B92D429626AFF008CA266 /* AdaptiveStack.swift in Sources */,
 				922B92CC2960EAD0008CA266 /* GameView.swift in Sources */,
 				922B92D2296105DB008CA266 /* RPS_Options.swift in Sources */,
 				922B92CE2960F62C008CA266 /* Buttons.swift in Sources */,

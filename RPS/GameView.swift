@@ -22,43 +22,47 @@ struct GameView: View {
             // Scoreboard
             Scoreboard(leftName: "CPU", leftScore: cpuScore, rightName: "Player", rightScore: playerScore)
                 .padding(.top)
-            // CPU
-            Spacer()
-            OpponentView(choice: $cpuChoice, revealed: $userMadeChoice)
-            Spacer()
-            // Post-guess information
-            VStack {
-                if resultText != "" {
-                    Text(resultText)
+            
+            AdaptiveVerticalView {
+                // CPU
+                Spacer()
+                OpponentView(choice: $cpuChoice, revealed: $userMadeChoice)
+                Spacer()
+                
+                // Post-guess information
+                VStack {
+                    if resultText != "" {
+                        Text(resultText)
+                            .font(.largeTitle)
+                            .fontWeight(.heavy)
+                        Button("Play again") {
+                            reset()
+                        }
                         .font(.largeTitle)
-                        .fontWeight(.heavy)
-                    Button("Play again") {
-                        reset()
+                        .padding(.horizontal)
+                        .iconStyle()
                     }
-                    .font(.largeTitle)
-                    .padding(.horizontal)
+                }
+                Spacer()
+                // Player
+                HStack {
+                    ForEach(Array(options.keys), id: \.self) { optionKey in
+                        Button(action: {
+                            if !userMadeChoice {
+                                onChoiceClick(optionKey)
+                            }
+                        }) {
+                            VStack {
+                                Text(options[optionKey]!)
+                                Text(optionKey)
+                                    .font(.title)
+                            }
+                        }
+                    }
                     .iconStyle()
                 }
+                Spacer()
             }
-            Spacer()
-            // Player
-            HStack {
-                ForEach(Array(options.keys), id: \.self) { optionKey in
-                    Button(action: {
-                        if !userMadeChoice {
-                            onChoiceClick(optionKey)
-                        }
-                    }) {
-                        VStack {
-                            Text(options[optionKey]!)
-                            Text(optionKey)
-                                .font(.title)
-                        }
-                    }
-                }
-            }
-            .iconStyle()
-            Spacer()
             TitleButton(text: "QUIT", action: { quitGame() })
         }
     }
