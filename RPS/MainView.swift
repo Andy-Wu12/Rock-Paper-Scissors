@@ -10,6 +10,8 @@ import SwiftUI
 struct MainView: View {
     @State private var started = false
     
+    var statTracker = StatTracker()
+    
     var body: some View {
 //        🪨📄✂️
         VStack {
@@ -17,7 +19,7 @@ struct MainView: View {
                 TitleView()
                 TitleButton(text: "START", action: { started.toggle() })
             } else {
-                GameView(gameStarted: $started)
+                GameView(gameStarted: $started, tracker: statTracker)
             }
         }
         .padding()

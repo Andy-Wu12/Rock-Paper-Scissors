@@ -17,6 +17,8 @@ struct GameView: View {
     @State private var playerScore = 0
     @State private var resultText = ""
     
+    var tracker: StatTracker
+    
     var body: some View {
         VStack {
             // Scoreboard
