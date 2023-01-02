@@ -50,6 +50,11 @@ struct GameView: View {
                     HStack {
                         ForEach(Array(options.keys), id: \.self) { optionKey in
                             Button(action: {
+                                /* Prints true when reproducing #2,
+                                   which means the button is still active even though userMadeChoice is correctly set to true
+                                   and the views shouldn't be rendered.
+                                 */
+                                // print(userMadeChoice)
                                 onChoiceClick(optionKey)
                             }) {
                                 VStack {
@@ -64,6 +69,7 @@ struct GameView: View {
                 } else {
                     Text("\(options[userChoice]!)")
                         .iconStyle()
+                        
                 }
                 Spacer()
             }
@@ -76,16 +82,18 @@ struct GameView: View {
     }
 
     func onChoiceClick(_ choiceKey: String) {
-        tracker.roundsPlayed += 1
-        userChoice = choiceKey
-        userMadeChoice = true
-        
-        // Generate random choice for cpu
-        generateCPUChoice()
-        
-        // Check result
-        let result = checkWin(playerChoice: userChoice, cpuChoice: cpuChoice)
-        updateResult(result: result)
+        if !userMadeChoice {
+            tracker.roundsPlayed += 1
+            userChoice = choiceKey
+            userMadeChoice = true
+            
+            // Generate random choice for cpu
+            generateCPUChoice()
+            
+            // Check result
+            let result = checkWin(playerChoice: userChoice, cpuChoice: cpuChoice)
+            updateResult(result: result)
+        }
     }
     
     func getResultText(result: Int) -> String {
