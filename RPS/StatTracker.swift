@@ -29,12 +29,12 @@ class StatTracker: Codable {
             "Ties": self.ties,
             "Rounds Played": self.roundsPlayed,
             "Games Started": self.timesStarted,
-            "# of times quit while losing": self.timesQuitWhileLosing,
-            "# of times quit while tied or winning": self.timesQuitWhileNotLosing,
-            "# times game opened": self.timesOpened,
-            "# rocks picked": self.numRocks,
-            "# papers picked": self.numPaper,
-            "# scissors picked": self.numScissors,
+            "Quits while losing": self.timesQuitWhileLosing,
+            "Quits while tied or winning": self.timesQuitWhileNotLosing,
+            "# Times Game opened": self.timesOpened,
+            "Rocks picked": self.numRocks,
+            "Papers picked": self.numPaper,
+            "Scissors picked": self.numScissors,
         ]
     }
     

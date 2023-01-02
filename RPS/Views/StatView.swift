@@ -18,7 +18,7 @@ struct StatView: View {
                     LazyVStack(alignment: .leading) {
                         // TODO: Find way to get stats to show up in certain order. Maybe OrderedDict?
                         ForEach(Array(tracker.namesAndValues.keys), id: \.self) { statName in
-                            StatColumn(name: statName, value: String(tracker.namesAndValues[statName]!))
+                            StatItem(name: statName, value: String(tracker.namesAndValues[statName]!))
                                 .padding(.bottom)
                         }
                     }
@@ -34,16 +34,29 @@ struct StatView: View {
     }
 }
 
-struct StatColumn: View {
+struct StatItem: View {
     var name: String
     var value: String
     
     var body: some View {
-        Text("\(name) - \(value)")
-            // TODO: Make font size more dynamic
-            .font(.system(size: 18))
-            .fontWeight(.heavy)
-            .foregroundColor(Color("UniversalPurple"))
+        GeometryReader { geometry in
+            HStack {
+                Text("\(name)")
+                    .frame(width: geometry.size.width * 0.80, height: 30)
+                    .font(.system(size: 18))
+                    .fontWeight(.heavy)
+                    .foregroundColor(.black)
+                    .background(Color("UniversalPurple"))
+                    .clipShape(Capsule())
+                Text("\(value)")
+                    .frame(width: geometry.size.width * 0.19, height: 30)
+                    .font(.system(size: 18))
+                    .fontWeight(.heavy)
+                    .foregroundColor(.black)
+                    .background(Color("UniversalPurple"))
+                    .clipShape(Capsule())
+            }
+        }
     }
 }
 
