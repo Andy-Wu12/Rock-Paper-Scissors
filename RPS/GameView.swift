@@ -45,21 +45,24 @@ struct GameView: View {
                 }
                 Spacer()
                 // Player
-                HStack {
-                    ForEach(Array(options.keys), id: \.self) { optionKey in
-                        Button(action: {
-                            if !userMadeChoice {
+                if !userMadeChoice {
+                    HStack {
+                        ForEach(Array(options.keys), id: \.self) { optionKey in
+                            Button(action: {
                                 onChoiceClick(optionKey)
-                            }
-                        }) {
-                            VStack {
-                                Text(options[optionKey]!)
-                                Text(optionKey)
-                                    .font(.title)
+                            }) {
+                                VStack {
+                                    Text(options[optionKey]!)
+                                    Text(optionKey)
+                                        .font(.title)
+                                }
                             }
                         }
+                        .iconStyle()
                     }
-                    .iconStyle()
+                } else {
+                    Text("\(options[userChoice]!)")
+                        .iconStyle()
                 }
                 Spacer()
             }
@@ -148,12 +151,9 @@ struct OpponentView: View {
         Group {
             if revealed {
                 VStack {
-                    Text("Opponent chose ")
-                        .font(.system(size: 40))
                     Text(options[choice]!)
                         .iconStyle()
                 }
-                
             } else {
                 Text("Waiting for you to choose")
                     .font(.system(size: 25))
