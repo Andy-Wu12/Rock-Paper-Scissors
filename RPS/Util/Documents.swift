@@ -17,6 +17,13 @@ func getDocumentsDirectory() -> URL {
 }
 
 func writeDocument<T: Codable>(name filename: String, for data: T) throws -> Void {
-    let jsonData = try JSONEncoder().encode(data)
+    let encoder = JSONEncoder()
+    encoder.outputFormatting = .prettyPrinted
+    let jsonData = try encoder.encode(data)
     try jsonData.write(to: getDocumentsDirectory().appendingPathComponent(filename))
+}
+
+func documentExists(at filename: String) -> Bool {
+    // .absoluteString does not work here
+    return FileManager.default.fileExists(atPath: getDocumentsDirectory().appendingPathComponent(filename).path())
 }

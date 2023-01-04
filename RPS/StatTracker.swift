@@ -40,7 +40,11 @@ class StatTracker: Codable {
     
     // TODO: Add persistence to stats (save / load)
     func save() -> Void {
-        
+        do {
+            try writeDocument(name: Config.saveFileName, for: self)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     func load() -> Void {
