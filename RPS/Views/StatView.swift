@@ -16,7 +16,6 @@ struct StatView: View {
             VStack {
                 ScrollView {
                     LazyVStack(alignment: .leading) {
-                        // TODO: Find way to get stats to show up in certain order. Maybe OrderedDict?
                         ForEach(Array(tracker.namesAndValues.keys), id: \.self) { statName in
                             StatItem(name: statName, value: String(tracker.namesAndValues[statName]!))
                                 .padding(.bottom)
@@ -28,6 +27,10 @@ struct StatView: View {
                 
                 CustomNavButton(text: "BACK", action: {
                     showingStats = false
+                })
+                CustomNavButton(text: "RESET", action: {
+                    tracker = StatTracker()
+                    tracker.resetAll()
                 })
             }
         }

@@ -38,7 +38,6 @@ class StatTracker: Codable {
         ]
     }
     
-    // TODO: Add persistence to stats (save / load)
     func save() -> Void {
         do {
             try writeDocument(name: Config.saveFileName, for: self)
@@ -57,7 +56,12 @@ class StatTracker: Codable {
     }
 
     // TODO: Add way to reset all stats, which should just create and save new StatTracker()
+    // Alternative way to do this is to hardcode every stat back to initial value, which doesn't require reassigning instance
     func resetAll() -> Void {
-        
+        do {
+            try writeDocument(name: Config.saveFileName, for: StatTracker())
+        } catch {
+            return
+        }
     }
 }
