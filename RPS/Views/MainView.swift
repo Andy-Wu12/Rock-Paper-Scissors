@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     @State private var showingStats = false
     @State private var started = false
-    @State private var statTracker = StatTracker()
+    @State private var statTracker = StatTracker.load()
     
     var body: some View {
         // Would be cleaner to add navigation view, but less "game feel"
