@@ -43,12 +43,17 @@ class StatTracker: Codable {
         do {
             try writeDocument(name: Config.saveFileName, for: self)
         } catch {
-            print(error.localizedDescription)
+//            print(error.localizedDescription)
+            return
         }
     }
     
-    func load() -> Void {
-        
+    static func load() -> StatTracker {
+        if let statTracker: StatTracker = try? readDocument(name: Config.saveFileName) {
+            return statTracker
+        } else {
+            return StatTracker()
+        }
     }
 
     // TODO: Add way to reset all stats, which should just create and save new StatTracker()
