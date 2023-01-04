@@ -13,3 +13,5 @@ let options: OrderedDictionary<String, String> = [
     "paper": "📄",
     "scissors": "✂️"
 ]
+
+let saveFileName = "persistent.json"

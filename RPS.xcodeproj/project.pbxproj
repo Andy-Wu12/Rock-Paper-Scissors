@@ -22,6 +22,7 @@
 		922B92D7296296B6008CA266 /* StatTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B92D6296296B6008CA266 /* StatTracker.swift */; };
 		922B92DA2962A4D6008CA266 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922B92D92962A4D6008CA266 /* StatView.swift */; };
 		922B92DD29635E5A008CA266 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 922B92DC29635E5A008CA266 /* OrderedCollections */; };
+		9262EF5F296527B2009FB23C /* Documents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9262EF5E296527B2009FB23C /* Documents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		922B92D329626AFF008CA266 /* AdaptiveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveStack.swift; sourceTree = "<group>"; };
 		922B92D6296296B6008CA266 /* StatTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatTracker.swift; sourceTree = "<group>"; };
 		922B92D92962A4D6008CA266 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
+		9262EF5E296527B2009FB23C /* Documents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Documents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,12 +78,12 @@
 		922B92B42960D77E008CA266 /* RPS */ = {
 			isa = PBXGroup;
 			children = (
+				9262EF5D2965277D009FB23C /* Util */,
 				922B92D82962A420008CA266 /* Views */,
 				922B92B52960D77E008CA266 /* RPS_App.swift */,
 				922B92B92960D781008CA266 /* Assets.xcassets */,
 				922B92BB2960D781008CA266 /* Preview Content */,
 				922B92CF2961024E008CA266 /* ModifierTemplates.swift */,
-				922B92D1296105DB008CA266 /* config.swift */,
 				922B92D6296296B6008CA266 /* StatTracker.swift */,
 			);
 			path = RPS;
@@ -105,6 +107,15 @@
 				922B92D92962A4D6008CA266 /* StatView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9262EF5D2965277D009FB23C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				922B92D1296105DB008CA266 /* config.swift */,
+				9262EF5E296527B2009FB23C /* Documents.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +203,7 @@
 				922B92DA2962A4D6008CA266 /* StatView.swift in Sources */,
 				922B92D2296105DB008CA266 /* config.swift in Sources */,
 				922B92D7296296B6008CA266 /* StatTracker.swift in Sources */,
+				9262EF5F296527B2009FB23C /* Documents.swift in Sources */,
 				922B92CE2960F62C008CA266 /* Buttons.swift in Sources */,
 				922B92D02961024E008CA266 /* ModifierTemplates.swift in Sources */,
 				922B92B62960D77E008CA266 /* RPS_App.swift in Sources */,
