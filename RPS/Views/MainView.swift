@@ -37,9 +37,9 @@ struct MainView: View {
 struct TitleView: View {
     var body: some View {
         HStack {
-            ForEach(Array(options.keys), id: \.self) { optionKey in
+            ForEach(Array(Config.options.keys), id: \.self) { optionKey in
                 VStack {
-                    Text(options[optionKey]!)
+                    Text(Config.options[optionKey]!)
                     Text(optionKey)
                         .font(.title)
                 }

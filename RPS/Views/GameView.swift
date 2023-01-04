@@ -48,7 +48,7 @@ struct GameView: View {
                 // Player
                 if !userMadeChoice {
                     HStack {
-                        ForEach(Array(options.keys), id: \.self) { optionKey in
+                        ForEach(Array(Config.options.keys), id: \.self) { optionKey in
                             Button(action: {
                                 /* Prints true when reproducing #2,
                                    which means the button is still active even though userMadeChoice is correctly set to true
@@ -58,7 +58,7 @@ struct GameView: View {
                                 onChoiceClick(optionKey)
                             }) {
                                 VStack {
-                                    Text(options[optionKey]!)
+                                    Text(Config.options[optionKey]!)
                                     Text(optionKey)
                                         .font(.title)
                                 }
@@ -67,7 +67,7 @@ struct GameView: View {
                         .iconStyle()
                     }
                 } else {
-                    Text("\(options[userChoice]!)")
+                    Text("\(Config.options[userChoice]!)")
                         .iconStyle()
                         
                 }
@@ -173,7 +173,7 @@ struct OpponentView: View {
         Group {
             if revealed {
                 VStack {
-                    Text(options[choice]!)
+                    Text(Config.options[choice]!)
                         .iconStyle()
                 }
             } else {
