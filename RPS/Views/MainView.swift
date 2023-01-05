@@ -10,7 +10,7 @@ import SwiftUI
 struct MainView: View {
     @State private var showingStats = false
     @State private var started = false
-    @State private var statTracker = StatTracker.load()
+    @Binding var statTracker: StatTracker
     
     var body: some View {
         // Would be cleaner to add navigation view, but less "game feel"
@@ -50,8 +50,9 @@ struct TitleView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    @State static var tracker = StatTracker()
     static var previews: some View {
-        MainView()
+        MainView(statTracker: $tracker)
     }
 }
 

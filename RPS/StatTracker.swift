@@ -16,25 +16,35 @@ class StatTracker: Codable {
     var timesStarted: Int = 0 // # start button clicks
     var timesQuitWhileLosing: Int = 0
     var timesQuitWhileNotLosing: Int = 0
-    var timesOpened: Int = 0 // TODO: # of times app opened
+    var timesOpened: Int = 0
     
     var numRocks: Int = 0
     var numPaper: Int = 0
     var numScissors: Int = 0
     
-    var namesAndValues: OrderedDictionary<String, Int> {
+    var namesAndValues: OrderedDictionary<String, [String: Int]> {
         [
-            "Wins": self.wins,
-            "Losses": self.losses,
-            "Ties": self.ties,
-            "Rounds Played": self.roundsPlayed,
-            "Games Started": self.timesStarted,
-            "Quits while losing": self.timesQuitWhileLosing,
-            "Quits while tied or winning": self.timesQuitWhileNotLosing,
-//            "# Times Game opened": self.timesOpened,
-            "Rocks picked": self.numRocks,
-            "Papers picked": self.numPaper,
-            "Scissors picked": self.numScissors,
+            "Win / Loss Record": [
+                "Wins": self.wins,
+                "Losses": self.losses,
+                "Ties": self.ties,
+//                "W / L ratio": self.wins / (1 + self.roundsPlayed)
+            ],
+            "Game History": [
+                "Rounds played": self.roundsPlayed,
+                "Games started": self.timesStarted,
+//                "Rounds played per game": self.roundsPlayed / (1 + self.timesStarted),
+                "Quits while losing": self.timesQuitWhileLosing,
+                "Quits while tied or winning": self.timesQuitWhileNotLosing,
+            ],
+            "Choices Made": [
+                "Rocks picked": self.numRocks,
+                "Papers picked": self.numPaper,
+                "Scissors picked": self.numScissors,
+            ],
+            "Miscellaneous": [
+                "# Times Game opened": self.timesOpened,
+            ]
         ]
     }
     
@@ -55,7 +65,6 @@ class StatTracker: Codable {
         }
     }
 
-    // TODO: Add way to reset all stats, which should just create and save new StatTracker()
     // Alternative way to do this is to hardcode every stat back to initial value, which doesn't require reassigning instance
     func resetAll() -> Void {
         do {

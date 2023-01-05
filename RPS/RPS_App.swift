@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct RPS_iOSApp: App {
+    @State private var statTracker = StatTracker.load()
+    
+    init() {
+        statTracker.timesOpened += 1
+        statTracker.save()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainView(statTracker: $statTracker)
         }
     }
 }
