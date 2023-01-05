@@ -22,7 +22,8 @@ class StatTracker: Codable {
     var numPaper: Int = 0
     var numScissors: Int = 0
     
-    var namesAndValues: OrderedDictionary<String, [String: Int]> {
+    // TODO: Find a way to allow adding Doubles too for some calculations
+    var namesAndValues: OrderedDictionary<String, OrderedDictionary<String, Int>> {
         [
             "Win / Loss Record": [
                 "Wins": self.wins,
@@ -43,7 +44,7 @@ class StatTracker: Codable {
                 "Scissors picked": self.numScissors,
             ],
             "Miscellaneous": [
-                "# Times Game opened": self.timesOpened,
+                "# Times game opened": self.timesOpened,
             ]
         ]
     }
