@@ -22,19 +22,16 @@ class StatTracker: Codable {
     var numPaper: Int = 0
     var numScissors: Int = 0
     
-    // TODO: Find a way to allow adding Doubles too for some calculations
     var namesAndValues: OrderedDictionary<String, OrderedDictionary<String, Int>> {
         [
             "Win / Loss Record": [
                 "Wins": self.wins,
                 "Losses": self.losses,
                 "Ties": self.ties,
-//                "W / L ratio": self.wins / (1 + self.roundsPlayed)
             ],
             "Game History": [
                 "Rounds played": self.roundsPlayed,
                 "Games started": self.timesStarted,
-//                "Rounds played per game": self.roundsPlayed / (1 + self.timesStarted),
                 "Quits while losing": self.timesQuitWhileLosing,
                 "Quits while tied or winning": self.timesQuitWhileNotLosing,
             ],
@@ -46,6 +43,19 @@ class StatTracker: Codable {
             "Miscellaneous": [
                 "# Times game opened": self.timesOpened,
             ]
+        ]
+    }
+    
+    var calculatedStats: OrderedDictionary<String, Double> {
+        let roundsDivisor = self.roundsPlayed == 0 ? 1 : self.roundsPlayed
+        let timesStartedDivisor = self.timesStarted == 0 ? 1 : self.timesStarted
+        
+        return [
+            "Win / Loss Ratio": Double(self.wins / roundsDivisor),
+            "Rounds Played Per Game": Double(self.roundsPlayed / timesStartedDivisor),
+            "Rock Percentage": Double(self.numRocks / roundsDivisor),
+            "Paper Percentage": Double(self.numPaper / roundsDivisor),
+            "Scissors Percentage": Double(self.numScissors / roundsDivisor)
         ]
     }
     
