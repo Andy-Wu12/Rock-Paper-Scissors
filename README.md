@@ -1,6 +1,6 @@
 # Rock, Paper, Scissors - iOS
 
-Installation
+## Installation
 
 I am not enrolled in the Apple Developer Program and due to that, lack the option to distribute this app in the App Store. 
 
