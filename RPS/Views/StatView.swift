@@ -39,7 +39,6 @@ struct StatView: View {
                     }
                     .padding([.horizontal, .bottom])
                 }
-                .padding()
                 .navigationTitle("Statistics")
                 
                 CustomNavButton(text: "BACK", action: {
@@ -76,14 +75,14 @@ struct StatItem: View {
             HStack {
                 Text("\(name)")
                     .frame(width: geometry.size.width * 0.80, height: 30)
-                    .font(.system(size: 18))
+                    .font(.system(size: 16))
                     .fontWeight(.heavy)
                     .foregroundColor(.black)
                     .background(Color("UniversalPurple"))
                     .clipShape(Capsule())
                 Text(value)
                     .frame(width: geometry.size.width * 0.19, height: 30)
-                    .font(.system(size: 18))
+                    .font(.system(size: 16))
                     .fontWeight(.heavy)
                     .foregroundColor(.black)
                     .background(Color("UniversalPurple"))
