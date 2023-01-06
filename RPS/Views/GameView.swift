@@ -120,21 +120,34 @@ struct GameView: View {
         if playerChoice == cpuChoice {
             result = 0
         } else if playerChoice == "rock" {
-            tracker.numRocks += 1
             if cpuChoice == "scissors" { result = 1 }
             else { result = -1 }
             
         } else if playerChoice == "paper" {
-            tracker.numPaper += 1
             if cpuChoice == "rock" { result = 1 }
             else { result = -1 }
             
         } else if playerChoice == "scissors" {
-            tracker.numScissors += 1
             if cpuChoice == "paper" { result = 1 }
             else { result = -1 }
         }
+        
+        updateChoiceStats(choice: playerChoice)
+        
         return result
+    }
+    
+    func updateChoiceStats(choice: String) -> Void {
+        switch choice {
+        case "rock":
+            tracker.numRocks += 1
+        case "paper":
+            tracker.numPaper += 1
+        case "scissors":
+            tracker.numScissors += 1
+        default:
+            return
+        }
     }
     
     func generateCPUChoice() {
