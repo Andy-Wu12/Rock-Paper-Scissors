@@ -51,11 +51,11 @@ class StatTracker: Codable {
         let timesStartedDivisor = self.timesStarted == 0 ? 1 : self.timesStarted
         
         return [
-            "Win / Loss Ratio": Double(self.wins / roundsDivisor),
-            "Rounds Played Per Game": Double(self.roundsPlayed / timesStartedDivisor),
-            "Rock Percentage": Double(self.numRocks / roundsDivisor),
-            "Paper Percentage": Double(self.numPaper / roundsDivisor),
-            "Scissors Percentage": Double(self.numScissors / roundsDivisor)
+            "Win Ratio": Double(self.wins) / Double(roundsDivisor),
+            "Rounds Played Per Game": Double(self.roundsPlayed) / Double(timesStartedDivisor),
+            "Rock Percentage": Double(self.numRocks) / Double(roundsDivisor),
+            "Paper Percentage": Double(self.numPaper) / Double(roundsDivisor),
+            "Scissors Percentage": Double(self.numScissors) / Double(roundsDivisor)
         ]
     }
     

@@ -26,10 +26,20 @@ struct StatView: View {
                                     .fontWeight(.heavy)
                             }
                         }
+                        Section {
+                            ForEach(Array(tracker.calculatedStats.keys), id: \.self) {
+                                statName in
+                                StatItem(name: statName, value: String(format: "%.2f", tracker.calculatedStats[statName]!))
+                                    .padding(.bottom)
+                            }
+                        } header: {
+                            Text("Summary")
+                                .fontWeight(.heavy)
+                        }
                     }
-                    .padding(.horizontal)
+                    .padding([.horizontal, .bottom])
                 }
-                .padding(.bottom)
+                .padding()
                 .navigationTitle("Statistics")
                 
                 CustomNavButton(text: "BACK", action: {
